@@ -5,14 +5,15 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Scanner teclado = new Scanner(System.in);
-
         if (args.length == 0) {
-            System.out.println("Debes introducir un archivo o directorio.");
+            System.out.println("Error: Debes proporcionar la ruta de un archivo o directorio como parámetro.");
             return;
         }
 
+        Scanner teclado = new Scanner(System.in);
         File ruta = new File(args[0]);
+
+        System.out.println("La ruta proporcionada es: " + ruta);
 
         if (!ruta.exists()) {
             System.out.println("El archivo o directorio no existe.");

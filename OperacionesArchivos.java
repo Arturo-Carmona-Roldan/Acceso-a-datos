@@ -59,9 +59,10 @@ public class OperacionesArchivos {
 
                 while (posicion != -1) {
 
+                    // Se suma 1 a posicion porque el enunciado usa base 1 para las posiciones
                     System.out.println(
                             linea + " - linea " + numeroLinea +
-                            " posicion " + posicion
+                                    " posicion " + (posicion + 1)
                     );
 
                     posicion = linea.indexOf(texto, posicion + 1);
@@ -99,8 +100,6 @@ public class OperacionesArchivos {
         ) {
 
             String linea;
-
-            escritor.write(System.lineSeparator());
 
             while ((linea = lector.readLine()) != null) {
                 escritor.write(linea);

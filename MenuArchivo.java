@@ -5,7 +5,7 @@ public class MenuArchivo {
 
     public static void mostrar(File archivo, Scanner teclado) {
 
-        int opcion;
+        int opcion = -1;
 
         do {
 
@@ -18,8 +18,13 @@ public class MenuArchivo {
             System.out.println("0. Salir");
             System.out.print("Elige una opción: ");
 
-            opcion = teclado.nextInt();
-            teclado.nextLine();
+            // Captura de excepción si el usuario no introduce un número
+            try {
+                opcion = Integer.parseInt(teclado.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Error: Debes ingresar un número entero válido.");
+                continue; // Vuelve a mostrar el menú sin romper el programa
+            }
 
             switch (opcion) {
 
